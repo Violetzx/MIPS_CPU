@@ -1,0 +1,330 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2
+valu
+Z0 !s110 1564454807
+!i10b 1
+!s100 2QA]imKH2JXeMB5KzWIQZ1
+IjgSiZ?k0fTAz@bbPZ;Qf61
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
+Z2 dC:/Users/yuz057/DESKTOP/test/MIPS_cpu/lab2
+Z3 w1564454161
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/alu.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/alu.v
+L0 12
+Z4 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1564454807.076000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/alu.v|
+!s90 -reportprogress|300|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/alu.v|
+!i113 1
+Z5 o-work work
+vasync_memory
+R0
+!i10b 1
+!s100 h9hc0Vm0lL:>MmX;ZQFKY3
+IWjM=eVPm[V=g8Hc_e`eMC3
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/async_memory.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/async_memory.v
+L0 22
+R4
+r1
+!s85 0
+31
+!s108 1564454807.154000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/async_memory.v|
+!s90 -reportprogress|300|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/async_memory.v|
+!i113 1
+R5
+vctr_unit
+R0
+!i10b 1
+!s100 R93mFm64[aVBC2V>G10fJ2
+IJ?mjjFgUIg2>Z80Z8[TmJ3
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/ctr_unit.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/ctr_unit.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1564454807.217000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/ctr_unit.v|
+!s90 -reportprogress|300|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/ctr_unit.v|
+!i113 1
+R5
+vdata_memory
+R0
+!i10b 1
+!s100 Gkn0ML<M12a<]b8k<R7[@1
+IKHB_BaLbz;;O0C5ED;PU=1
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/data_memory.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/data_memory.v
+L0 25
+R4
+r1
+!s85 0
+31
+!s108 1564454807.279000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/data_memory.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/data_memory.v|
+!i113 1
+R5
+vextend_zero
+R0
+!i10b 1
+!s100 ]Xk[YV3Ijl7R1cQR`2g:k3
+Iaz09bAEfdSjcLmdD9BACV1
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/extend_zero.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/extend_zero.v
+L0 7
+R4
+r1
+!s85 0
+31
+!s108 1564454807.342000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/extend_zero.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/extend_zero.v|
+!i113 1
+R5
+vinst_rom
+R0
+!i10b 1
+!s100 UeWn4:;WB5gA88eD^1A4l0
+IdiXVJOaAZhf:XS>hQ@Q[i2
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/inst_rom.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/inst_rom.v
+L0 15
+R4
+r1
+!s85 0
+31
+!s108 1564454807.404000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/inst_rom.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/inst_rom.v|
+!i113 1
+R5
+vloader
+R0
+!i10b 1
+!s100 LKEShD53R]NC5JZ<Pz6oc3
+If:zb_X<eE]8^[e@4khRzg0
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/loader.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/loader.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1564454807.467000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/loader.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/loader.v|
+!i113 1
+R5
+vmux_four_n
+R0
+!i10b 1
+!s100 ;_P15NlAh?k7IP?IJz23L1
+IC5`S>EKhO3hdX@>=7>F`Q1
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/mux_four_n.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/mux_four_n.v
+L0 8
+R4
+r1
+!s85 0
+31
+!s108 1564454807.576000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/mux_four_n.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/mux_four_n.v|
+!i113 1
+R5
+vn_mux
+R0
+!i10b 1
+!s100 EI@VQ^Edgm6V`h;nMbHaF3
+I=Z><jJbKY@Rdg`0UcNHQD2
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/mux.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/mux.v
+L0 8
+R4
+r1
+!s85 0
+31
+!s108 1564454807.513000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/mux.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/mux.v|
+!i113 1
+R5
+vpc
+R0
+!i10b 1
+!s100 ?g[]jJa1b_MoDE[dLHO]S2
+Ie7Xn76>VA4gE1cmDlUkHk2
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/pc.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/pc.v
+L0 8
+R4
+r1
+!s85 0
+31
+!s108 1564454807.638000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/pc.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/pc.v|
+!i113 1
+R5
+vpc_jumper
+R0
+!i10b 1
+!s100 lm8_GZGo2HD5eZA9o09_b0
+IODlzD<zbLBR547F^EWX1M2
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/pc_jumper.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/pc_jumper.v
+L0 3
+R4
+r1
+!s85 0
+31
+!s108 1564454807.701000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/pc_jumper.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/pc_jumper.v|
+!i113 1
+R5
+vprocessor
+R0
+!i10b 1
+!s100 5dIaKNkcYKLSb`g@<Nag93
+I4EX?gXnn]EaJi6B3]DKXn0
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/processor.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/processor.v
+L0 8
+R4
+r1
+!s85 0
+31
+!s108 1564454807.763000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/processor.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/processor.v|
+!i113 1
+R5
+vregister
+R0
+!i10b 1
+!s100 nB_JDilf6Nzj:6ag7k>dI2
+IEl=k3i]zOM`kC8m3mEi]a1
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/register.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/register.v
+L0 7
+R4
+r1
+!s85 0
+31
+!s108 1564454807.826000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/register.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/register.v|
+!i113 1
+R5
+vserial_buffer
+R0
+!i10b 1
+!s100 ;R58F=;cGmcBlnFG<E1>F2
+Ig^7iVln0>`<IoofIW3Q850
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/serial_buf.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/serial_buf.v
+L0 17
+R4
+r1
+!s85 0
+31
+!s108 1564454807.888000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/serial_buf.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/serial_buf.v|
+!i113 1
+R5
+vsign_extender
+R0
+!i10b 1
+!s100 ;Nk8aPCenIWa`VZ1[mO=z1
+I4O=zD[J9=_Slo?2Ih`J^c3
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/sign_extender.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/sign_extender.v
+L0 7
+R4
+r1
+!s85 0
+31
+!s108 1564454807.951000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/sign_extender.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/sign_extender.v|
+!i113 1
+R5
+vtestbench
+!s110 1564454808
+!i10b 1
+!s100 Xc`Iga7XJZ4Fi[:NS?7i_3
+I6>b>P6P]Q79:?Xi`3G9430
+R1
+R2
+R3
+8C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/testbench.v
+FC:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/testbench.v
+L0 3
+R4
+r1
+!s85 0
+31
+!s108 1564454808.013000
+!s107 C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/testbench.v|
+!s90 -reportprogress|30|-work|work|C:/Users/yuz057/Desktop/test/MIPS_cpu/lab2/testbench.v|
+!i113 1
+R5

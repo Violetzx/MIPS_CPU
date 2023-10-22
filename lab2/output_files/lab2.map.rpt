@@ -1,0 +1,1894 @@
+Analysis & Synthesis report for lab2
+Mon Jul 22 17:37:54 2019
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0|altsyncram_ovh1:auto_generated
+ 17. Source assignments for data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0|altsyncram_03i1:auto_generated
+ 18. Source assignments for data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_23i1:auto_generated
+ 19. Source assignments for data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0|altsyncram_qvh1:auto_generated
+ 20. Source assignments for data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0|altsyncram_33i1:auto_generated
+ 21. Source assignments for data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0|altsyncram_rvh1:auto_generated
+ 22. Source assignments for data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0|altsyncram_13i1:auto_generated
+ 23. Source assignments for data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0|altsyncram_pvh1:auto_generated
+ 24. Parameter Settings for User Entity Instance: mux_four_n:write_mux
+ 25. Parameter Settings for User Entity Instance: mux_four_n:write_data_mux
+ 26. Parameter Settings for User Entity Instance: n_mux:alu_mux
+ 27. Parameter Settings for User Entity Instance: n_mux:PC_mux
+ 28. Parameter Settings for User Entity Instance: pc_jumper:pc_jumper|mux_four_n:pc_jump_mux
+ 29. Parameter Settings for User Entity Instance: pc:program_counter
+ 30. Parameter Settings for User Entity Instance: loader:loader|mux_four_n:loader_mux
+ 31. Parameter Settings for User Entity Instance: loader:loader|n_mux:mem_mux
+ 32. Parameter Settings for User Entity Instance: inst_rom:inst_rom
+ 33. Parameter Settings for User Entity Instance: data_memory:rom
+ 34. Parameter Settings for User Entity Instance: data_memory:rom|async_memory:data_seg
+ 35. Parameter Settings for User Entity Instance: data_memory:rom|async_memory:stack_seg
+ 36. Parameter Settings for User Entity Instance: data_memory:rom|serial_buffer:ser
+ 37. Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0
+ 38. Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0
+ 39. Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0
+ 40. Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0
+ 41. Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0
+ 42. Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0
+ 43. Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0
+ 44. Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0
+ 45. altsyncram Parameter Settings by Entity Instance
+ 46. Port Connectivity Checks: "loader:loader|mux_four_n:loader_mux"
+ 47. Port Connectivity Checks: "mux_four_n:write_data_mux"
+ 48. Port Connectivity Checks: "mux_four_n:write_mux"
+ 49. Port Connectivity Checks: "ctr_unit:ctr"
+ 50. Post-Synthesis Netlist Statistics for Top Partition
+ 51. Elapsed Time Per Partition
+ 52. Analysis & Synthesis Messages
+ 53. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jul 22 17:37:54 2019       ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
+; Revision Name                      ; lab2                                        ;
+; Top-level Entity Name              ; processor                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 3,996                                       ;
+;     Total combinational functions  ; 3,036                                       ;
+;     Dedicated logic registers      ; 1,062                                       ;
+; Total registers                    ; 1062                                        ;
+; Total pins                         ; 22                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 65,536                                      ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE40F29C6       ;                    ;
+; Top-level entity name                                                      ; processor          ; lab2               ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
+;     Processors 5-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                            ;
++--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                     ; Library ;
++--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------+---------+
+; pc_jumper.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/pc_jumper.v                                ;         ;
+; register.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/register.v                                 ;         ;
+; pc.v                                       ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/pc.v                                       ;         ;
+; mux.v                                      ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/mux.v                                      ;         ;
+; processor.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/processor.v                                ;         ;
+; serial_buf.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/serial_buf.v                               ;         ;
+; inst_rom.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/inst_rom.v                                 ;         ;
+; data_memory.v                              ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/data_memory.v                              ;         ;
+; async_memory.v                             ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/async_memory.v                             ;         ;
+; alu.v                                      ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/alu.v                                      ;         ;
+; sign_extender.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/sign_extender.v                            ;         ;
+; ctr_unit.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/ctr_unit.v                                 ;         ;
+; mux_four_n.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/mux_four_n.v                               ;         ;
+; loader.v                                   ; yes             ; User Verilog HDL File                                 ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/loader.v                                   ;         ;
+; altsyncram.tdf                             ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/altsyncram.tdf                    ;         ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/stratix_ram_block.inc             ;         ;
+; lpm_mux.inc                                ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_mux.inc                       ;         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_decode.inc                    ;         ;
+; aglobal150.inc                             ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/aglobal150.inc                    ;         ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/a_rdenreg.inc                     ;         ;
+; altrom.inc                                 ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/altrom.inc                        ;         ;
+; altram.inc                                 ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/altram.inc                        ;         ;
+; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/altera/15.0/quartus/libraries/megafunctions/altdpram.inc                      ;         ;
+; db/altsyncram_ovh1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/altsyncram_ovh1.tdf                     ;         ;
+; db/lab2.ram0_async_memory_4acb313e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/lab2.ram0_async_memory_4acb313e.hdl.mif ;         ;
+; db/altsyncram_03i1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/altsyncram_03i1.tdf                     ;         ;
+; db/lab2.ram0_async_memory_ea4acf6d.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/lab2.ram0_async_memory_ea4acf6d.hdl.mif ;         ;
+; db/altsyncram_23i1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/altsyncram_23i1.tdf                     ;         ;
+; db/lab2.ram2_async_memory_ea4acf6d.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/lab2.ram2_async_memory_ea4acf6d.hdl.mif ;         ;
+; db/altsyncram_qvh1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/altsyncram_qvh1.tdf                     ;         ;
+; db/lab2.ram2_async_memory_4acb313e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/lab2.ram2_async_memory_4acb313e.hdl.mif ;         ;
+; db/altsyncram_33i1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/altsyncram_33i1.tdf                     ;         ;
+; db/lab2.ram3_async_memory_ea4acf6d.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/lab2.ram3_async_memory_ea4acf6d.hdl.mif ;         ;
+; db/altsyncram_rvh1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/altsyncram_rvh1.tdf                     ;         ;
+; db/lab2.ram3_async_memory_4acb313e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/lab2.ram3_async_memory_4acb313e.hdl.mif ;         ;
+; db/altsyncram_13i1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/altsyncram_13i1.tdf                     ;         ;
+; db/lab2.ram1_async_memory_ea4acf6d.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/lab2.ram1_async_memory_ea4acf6d.hdl.mif ;         ;
+; db/altsyncram_pvh1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/altsyncram_pvh1.tdf                     ;         ;
+; db/lab2.ram1_async_memory_4acb313e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/lab2.ram1_async_memory_4acb313e.hdl.mif ;         ;
++--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 3,996       ;
+;                                             ;             ;
+; Total combinational functions               ; 3036        ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 2489        ;
+;     -- 3 input functions                    ; 446         ;
+;     -- <=2 input functions                  ; 101         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 2884        ;
+;     -- arithmetic mode                      ; 152         ;
+;                                             ;             ;
+; Total registers                             ; 1062        ;
+;     -- Dedicated logic registers            ; 1062        ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 22          ;
+; Total memory bits                           ; 65536       ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 1126        ;
+; Total fan-out                               ; 15522       ;
+; Average fan-out                             ; 3.69        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
+; |processor                                   ; 3036 (33)         ; 1062 (0)     ; 65536       ; 0            ; 0       ; 0         ; 22   ; 0            ; |processor                                                                                             ; work         ;
+;    |alu:alu|                                 ; 251 (251)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|alu:alu                                                                                     ; work         ;
+;    |ctr_unit:ctr|                            ; 88 (88)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|ctr_unit:ctr                                                                                ; work         ;
+;    |data_memory:rom|                         ; 132 (44)          ; 9 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom                                                                             ; work         ;
+;       |async_memory:data_seg|                ; 6 (6)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:data_seg                                                       ; work         ;
+;          |altsyncram:mem0_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0                                 ; work         ;
+;             |altsyncram_ovh1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0|altsyncram_ovh1:auto_generated  ; work         ;
+;          |altsyncram:mem1_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0                                 ; work         ;
+;             |altsyncram_pvh1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0|altsyncram_pvh1:auto_generated  ; work         ;
+;          |altsyncram:mem2_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0                                 ; work         ;
+;             |altsyncram_qvh1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0|altsyncram_qvh1:auto_generated  ; work         ;
+;          |altsyncram:mem3_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0                                 ; work         ;
+;             |altsyncram_rvh1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0|altsyncram_rvh1:auto_generated  ; work         ;
+;       |async_memory:stack_seg|               ; 71 (71)           ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:stack_seg                                                      ; work         ;
+;          |altsyncram:mem0_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0                                ; work         ;
+;             |altsyncram_03i1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0|altsyncram_03i1:auto_generated ; work         ;
+;          |altsyncram:mem1_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0                                ; work         ;
+;             |altsyncram_13i1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0|altsyncram_13i1:auto_generated ; work         ;
+;          |altsyncram:mem2_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0                                ; work         ;
+;             |altsyncram_23i1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_23i1:auto_generated ; work         ;
+;          |altsyncram:mem3_rtl_0|             ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0                                ; work         ;
+;             |altsyncram_33i1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0|altsyncram_33i1:auto_generated ; work         ;
+;       |serial_buffer:ser|                    ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|data_memory:rom|serial_buffer:ser                                                           ; work         ;
+;    |inst_rom:inst_rom|                       ; 886 (886)         ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|inst_rom:inst_rom                                                                           ; work         ;
+;    |loader:loader|                           ; 16 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|loader:loader                                                                               ; work         ;
+;       |mux_four_n:loader_mux|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|loader:loader|mux_four_n:loader_mux                                                         ; work         ;
+;       |n_mux:mem_mux|                        ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|loader:loader|n_mux:mem_mux                                                                 ; work         ;
+;    |mux_four_n:write_data_mux|               ; 104 (104)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux_four_n:write_data_mux                                                                   ; work         ;
+;    |mux_four_n:write_mux|                    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|mux_four_n:write_mux                                                                        ; work         ;
+;    |n_mux:PC_mux|                            ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|n_mux:PC_mux                                                                                ; work         ;
+;    |n_mux:alu_mux|                           ; 53 (53)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|n_mux:alu_mux                                                                               ; work         ;
+;    |pc:program_counter|                      ; 62 (62)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|pc:program_counter                                                                          ; work         ;
+;    |pc_jumper:pc_jumper|                     ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|pc_jumper:pc_jumper                                                                         ; work         ;
+;    |register:registers|                      ; 1349 (1349)       ; 992 (992)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|register:registers                                                                          ; work         ;
+;    |sign_extender:se|                        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|sign_extender:se                                                                            ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                 ;
++--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
+; Name                                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                        ;
++--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
+; data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0|altsyncram_ovh1:auto_generated|ALTSYNCRAM  ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; db/lab2.ram0_async_memory_4acb313e.hdl.mif ;
+; data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0|altsyncram_pvh1:auto_generated|ALTSYNCRAM  ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; db/lab2.ram1_async_memory_4acb313e.hdl.mif ;
+; data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0|altsyncram_qvh1:auto_generated|ALTSYNCRAM  ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; db/lab2.ram2_async_memory_4acb313e.hdl.mif ;
+; data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0|altsyncram_rvh1:auto_generated|ALTSYNCRAM  ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; db/lab2.ram3_async_memory_4acb313e.hdl.mif ;
+; data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0|altsyncram_03i1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; db/lab2.ram0_async_memory_ea4acf6d.hdl.mif ;
+; data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0|altsyncram_13i1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; db/lab2.ram1_async_memory_ea4acf6d.hdl.mif ;
+; data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_23i1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; db/lab2.ram2_async_memory_ea4acf6d.hdl.mif ;
+; data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0|altsyncram_33i1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; db/lab2.ram3_async_memory_ea4acf6d.hdl.mif ;
++--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal         ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; ctr_unit:ctr|we_in_reg                              ; ctr_unit:ctr|we_in_reg      ; yes                    ;
+; ctr_unit:ctr|func_in_reg[1]                         ; ctr_unit:ctr|func_in_reg[3] ; yes                    ;
+; ctr_unit:ctr|ALUSrc_reg                             ; ctr_unit:ctr|ALUSrc_reg     ; yes                    ;
+; ctr_unit:ctr|func_in_reg[3]                         ; ctr_unit:ctr|func_in_reg[3] ; yes                    ;
+; ctr_unit:ctr|func_in_reg[4]                         ; ctr_unit:ctr|func_in_reg[3] ; yes                    ;
+; ctr_unit:ctr|func_in_reg[5]                         ; ctr_unit:ctr|func_in_reg[5] ; yes                    ;
+; ctr_unit:ctr|func_in_reg[0]                         ; ctr_unit:ctr|func_in_reg[3] ; yes                    ;
+; ctr_unit:ctr|func_in_reg[2]                         ; ctr_unit:ctr|func_in_reg[5] ; yes                    ;
+; ctr_unit:ctr|MemToReg_reg[0]                        ; ctr_unit:ctr|ALUSrc_reg     ; yes                    ;
+; ctr_unit:ctr|MemToReg_reg[1]                        ; ctr_unit:ctr|we_in_reg      ; yes                    ;
+; ctr_unit:ctr|load_sel_reg[0]                        ; ctr_unit:ctr|WideOr11       ; yes                    ;
+; ctr_unit:ctr|mem_sel_reg                            ; ctr_unit:ctr|WideOr11       ; yes                    ;
+; ctr_unit:ctr|RegWrite_reg                           ; ctr_unit:ctr|we_in_reg      ; yes                    ;
+; ctr_unit:ctr|RegDst_reg[1]                          ; ctr_unit:ctr|ALUSrc_reg     ; yes                    ;
+; ctr_unit:ctr|RegDst_reg[0]                          ; ctr_unit:ctr|we_in_reg      ; yes                    ;
+; ctr_unit:ctr|jump_reg[1]                            ; ctr_unit:ctr|jump_reg[1]    ; yes                    ;
+; ctr_unit:ctr|jump_reg[0]                            ; ctr_unit:ctr|WideOr1        ; yes                    ;
+; ctr_unit:ctr|load_sel_reg[1]                        ; ctr_unit:ctr|WideOr11       ; yes                    ;
+; ctr_unit:ctr|size_in_reg[0]                         ; ctr_unit:ctr|size_in_reg[0] ; yes                    ;
+; ctr_unit:ctr|size_in_reg[1]                         ; ctr_unit:ctr|size_in_reg[0] ; yes                    ;
+; Number of user-specified and inferred latches = 20  ;                             ;                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++-------------------------------------------+----------------------------------------+
+; Register name                             ; Reason for Removal                     ;
++-------------------------------------------+----------------------------------------+
+; data_memory:rom|serial_buffer:ser|read_en ; Stuck at GND due to stuck port data_in ;
+; inst_rom:inst_rom|out[6]                  ; Stuck at GND due to stuck port data_in ;
+; inst_rom:inst_rom|out[1]                  ; Merged with inst_rom:inst_rom|out[0]   ;
+; inst_rom:inst_rom|out[18]                 ; Merged with inst_rom:inst_rom|out[17]  ;
+; register:registers|registers[0][0]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][2]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][1]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][3]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][16]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][15]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][14]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][13]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][12]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][11]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][10]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][9]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][8]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][7]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][6]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][5]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][4]        ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][28]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][27]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][26]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][25]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][24]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][23]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][22]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][21]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][20]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][19]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][18]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][17]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][31]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][30]       ; Stuck at GND due to stuck port data_in ;
+; register:registers|registers[0][29]       ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 36    ;                                        ;
++-------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                     ;
++--------------------------+---------------------------+--------------------------------------------------------------------------+
+; Register name            ; Reason for Removal        ; Registers Removed due to This Register                                   ;
++--------------------------+---------------------------+--------------------------------------------------------------------------+
+; inst_rom:inst_rom|out[6] ; Stuck at GND              ; register:registers|registers[0][0], register:registers|registers[0][2],  ;
+;                          ; due to stuck port data_in ; register:registers|registers[0][30], register:registers|registers[0][29] ;
++--------------------------+---------------------------+--------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1062  ;
+; Number of registers using Synchronous Clear  ; 38    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1002  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; pc:program_counter|PC_reg[3]            ; 1       ;
+; pc:program_counter|PC_reg[2]            ; 1       ;
+; pc:program_counter|PC_reg[4]            ; 1       ;
+; pc:program_counter|PC_reg[9]            ; 1       ;
+; pc:program_counter|PC_reg[8]            ; 1       ;
+; pc:program_counter|PC_reg[7]            ; 1       ;
+; pc:program_counter|PC_reg[6]            ; 1       ;
+; pc:program_counter|PC_reg[5]            ; 1       ;
+; pc:program_counter|PC_reg[10]           ; 1       ;
+; pc:program_counter|PC_reg[11]           ; 1       ;
+; pc:program_counter|PC_reg[21]           ; 1       ;
+; pc:program_counter|PC_reg[20]           ; 1       ;
+; pc:program_counter|PC_reg[19]           ; 1       ;
+; pc:program_counter|PC_reg[18]           ; 1       ;
+; pc:program_counter|PC_reg[17]           ; 1       ;
+; pc:program_counter|PC_reg[16]           ; 1       ;
+; pc:program_counter|PC_reg[15]           ; 1       ;
+; pc:program_counter|PC_reg[14]           ; 1       ;
+; pc:program_counter|PC_reg[13]           ; 1       ;
+; pc:program_counter|PC_reg[12]           ; 1       ;
+; Total number of inverted registers = 20 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                 ;
++---------------------------------------------------+---------------------------------------------------+------+
+; Register Name                                     ; Megafunction                                      ; Type ;
++---------------------------------------------------+---------------------------------------------------+------+
+; data_memory:rom|async_memory:data_seg|rd[0..7]    ; data_memory:rom|async_memory:data_seg|mem0_rtl_0  ; RAM  ;
+; data_memory:rom|async_memory:stack_seg|rd[0..7]   ; data_memory:rom|async_memory:stack_seg|mem0_rtl_0 ; RAM  ;
+; data_memory:rom|async_memory:stack_seg|rd[16..23] ; data_memory:rom|async_memory:stack_seg|mem2_rtl_0 ; RAM  ;
+; data_memory:rom|async_memory:data_seg|rd[16..23]  ; data_memory:rom|async_memory:data_seg|mem2_rtl_0  ; RAM  ;
+; data_memory:rom|async_memory:stack_seg|rd[24..31] ; data_memory:rom|async_memory:stack_seg|mem3_rtl_0 ; RAM  ;
+; data_memory:rom|async_memory:data_seg|rd[24..31]  ; data_memory:rom|async_memory:data_seg|mem3_rtl_0  ; RAM  ;
+; data_memory:rom|async_memory:stack_seg|rd[8..15]  ; data_memory:rom|async_memory:stack_seg|mem1_rtl_0 ; RAM  ;
+; data_memory:rom|async_memory:data_seg|rd[8..15]   ; data_memory:rom|async_memory:data_seg|mem1_rtl_0  ; RAM  ;
++---------------------------------------------------+---------------------------------------------------+------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |processor|data_memory:rom|serial_buffer:ser|sbyte[0]       ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[31][31]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[30][18]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[29][28]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[28][25]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[27][29]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[26][2]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[25][12]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[24][22]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[23][20]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[22][27]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[21][16]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[20][14]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[19][15]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[18][14]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[17][28]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[16][31]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[15][31]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[14][31]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[13][31]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[12][11]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[11][29]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[10][17]             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[9][17]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[8][11]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[7][17]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[6][19]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[5][31]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[4][6]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[3][6]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[2][1]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[1][18]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processor|register:registers|registers[0][24]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |processor|pc:program_counter|PC_reg[0]                     ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |processor|pc:program_counter|PC_reg[28]                    ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |processor|pc:program_counter|PC_reg[25]                    ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |processor|pc:program_counter|PC_reg[18]                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |processor|mux_four_n:write_mux|out[1]                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |processor|ctr_unit:ctr|ALUSrc_reg                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|ctr_unit:ctr|func_in_reg[3]                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|data_memory:rom|async_memory:stack_seg|Mux0      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:rom|async_memory:data_seg|mem1       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |processor|data_memory:rom|async_memory:stack_seg|mem3      ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |processor|mux_four_n:write_data_mux|out[30]                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processor|ctr_unit:ctr|we_in_reg                           ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |processor|n_mux:PC_mux|out[2]                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |processor|data_memory:rom|async_memory:stack_seg|Selector5 ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |processor|mux_four_n:write_data_mux|out[11]                ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |processor|register:registers|Mux55                         ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |processor|register:registers|Mux16                         ;
+; 7:1                ; 27 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |processor|alu:alu|O_out[16]                                ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; No         ; |processor|mux_four_n:write_data_mux|out[13]                ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |processor|mux_four_n:write_data_mux|out[2]                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0|altsyncram_ovh1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0|altsyncram_03i1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                   ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                    ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0|altsyncram_23i1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                   ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                    ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0|altsyncram_qvh1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0|altsyncram_33i1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                   ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                    ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0|altsyncram_rvh1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0|altsyncram_13i1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                   ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                    ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0|altsyncram_pvh1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_four_n:write_mux ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 5     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_four_n:write_data_mux ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: n_mux:alu_mux ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 32    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: n_mux:PC_mux ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pc_jumper:pc_jumper|mux_four_n:pc_jump_mux ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pc:program_counter     ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; rst_value      ; 00000000001111111111111111111100 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: loader:loader|mux_four_n:loader_mux ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: loader:loader|n_mux:mem_mux ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: inst_rom:inst_rom                                                  ;
++----------------+-------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                         ; Type           ;
++----------------+-------------------------------------------------------------------------------+----------------+
+; ADDR_WIDTH     ; 10                                                                            ; Signed Integer ;
+; INIT_PROGRAM   ; C:/Users/yuz057/Desktop/MIPS_cpu/lab4-files-2/memh/fib2/fib/fib.inst_rom.memh ; String         ;
++----------------+-------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_memory:rom                                             ;
++----------------+--------------------------------------------------------------------------------+--------+
+; Parameter Name ; Value                                                                          ; Type   ;
++----------------+--------------------------------------------------------------------------------+--------+
+; INIT_PROGRAM0  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab4-files-2/memh/fib2/fib/fib.data_ram0.memh ; String ;
+; INIT_PROGRAM1  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab4-files-2/memh/fib2/fib/fib.data_ram1.memh ; String ;
+; INIT_PROGRAM2  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab4-files-2/memh/fib2/fib/fib.data_ram2.memh ; String ;
+; INIT_PROGRAM3  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab4-files-2/memh/fib2/fib/fib.data_ram3.memh ; String ;
++----------------+--------------------------------------------------------------------------------+--------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_memory:rom|async_memory:data_seg                                ;
++----------------+--------------------------------------------------------------------------------+-----------------+
+; Parameter Name ; Value                                                                          ; Type            ;
++----------------+--------------------------------------------------------------------------------+-----------------+
+; MEM_ADDR       ; 0001000000000000                                                               ; Unsigned Binary ;
+; DO_INIT        ; 1                                                                              ; Signed Integer  ;
+; INIT_PROGRAM0  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab4-files-2/memh/fib2/fib/fib.data_ram0.memh ; String          ;
+; INIT_PROGRAM1  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab4-files-2/memh/fib2/fib/fib.data_ram1.memh ; String          ;
+; INIT_PROGRAM2  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab4-files-2/memh/fib2/fib/fib.data_ram2.memh ; String          ;
+; INIT_PROGRAM3  ; C:/Users/yuz057/Desktop/MIPS_cpu/lab4-files-2/memh/fib2/fib/fib.data_ram3.memh ; String          ;
++----------------+--------------------------------------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_memory:rom|async_memory:stack_seg ;
++----------------+--------------------------------------------------+-----------------+
+; Parameter Name ; Value                                            ; Type            ;
++----------------+--------------------------------------------------+-----------------+
+; MEM_ADDR       ; 0111111111111111                                 ; Unsigned Binary ;
+; DO_INIT        ; 0                                                ; Signed Integer  ;
+; INIT_PROGRAM0  ; c:/altera/11.1sp1/141/hello_world.data_ram0.memh ; String          ;
+; INIT_PROGRAM1  ; c:/altera/11.1sp1/141/hello_world.data_ram1.memh ; String          ;
+; INIT_PROGRAM2  ; c:/altera/11.1sp1/141/hello_world.data_ram2.memh ; String          ;
+; INIT_PROGRAM3  ; c:/altera/11.1sp1/141/hello_world.data_ram3.memh ; String          ;
++----------------+--------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_memory:rom|serial_buffer:ser ;
++----------------+------------------+--------------------------------------------+
+; Parameter Name ; Value            ; Type                                       ;
++----------------+------------------+--------------------------------------------+
+; MEM_ADDR       ; 1111111111111111 ; Unsigned Binary                            ;
++----------------+------------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0 ;
++------------------------------------+--------------------------------------------+----------------------------+
+; Parameter Name                     ; Value                                      ; Type                       ;
++------------------------------------+--------------------------------------------+----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped                    ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE             ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped                    ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped                    ;
+; WIDTH_A                            ; 8                                          ; Untyped                    ;
+; WIDTHAD_A                          ; 10                                         ; Untyped                    ;
+; NUMWORDS_A                         ; 1024                                       ; Untyped                    ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped                    ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                    ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped                    ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; WIDTH_B                            ; 8                                          ; Untyped                    ;
+; WIDTHAD_B                          ; 10                                         ; Untyped                    ;
+; NUMWORDS_B                         ; 1024                                       ; Untyped                    ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                    ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                    ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                    ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                    ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped                    ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped                    ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped                    ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped                    ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped                    ;
+; BYTE_SIZE                          ; 8                                          ; Untyped                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped                    ;
+; INIT_FILE                          ; db/lab2.ram0_async_memory_4acb313e.hdl.mif ; Untyped                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped                    ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped                    ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                    ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                    ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped                    ;
+; CBXI_PARAMETER                     ; altsyncram_ovh1                            ; Untyped                    ;
++------------------------------------+--------------------------------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0 ;
++------------------------------------+--------------------------------------------+-----------------------------+
+; Parameter Name                     ; Value                                      ; Type                        ;
++------------------------------------+--------------------------------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped                     ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped                     ;
+; WIDTH_A                            ; 8                                          ; Untyped                     ;
+; WIDTHAD_A                          ; 10                                         ; Untyped                     ;
+; NUMWORDS_A                         ; 1024                                       ; Untyped                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; WIDTH_B                            ; 8                                          ; Untyped                     ;
+; WIDTHAD_B                          ; 10                                         ; Untyped                     ;
+; NUMWORDS_B                         ; 1024                                       ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped                     ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped                     ;
+; BYTE_SIZE                          ; 8                                          ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped                     ;
+; INIT_FILE                          ; db/lab2.ram0_async_memory_ea4acf6d.hdl.mif ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_03i1                            ; Untyped                     ;
++------------------------------------+--------------------------------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0 ;
++------------------------------------+--------------------------------------------+-----------------------------+
+; Parameter Name                     ; Value                                      ; Type                        ;
++------------------------------------+--------------------------------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped                     ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped                     ;
+; WIDTH_A                            ; 8                                          ; Untyped                     ;
+; WIDTHAD_A                          ; 10                                         ; Untyped                     ;
+; NUMWORDS_A                         ; 1024                                       ; Untyped                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; WIDTH_B                            ; 8                                          ; Untyped                     ;
+; WIDTHAD_B                          ; 10                                         ; Untyped                     ;
+; NUMWORDS_B                         ; 1024                                       ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped                     ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped                     ;
+; BYTE_SIZE                          ; 8                                          ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped                     ;
+; INIT_FILE                          ; db/lab2.ram2_async_memory_ea4acf6d.hdl.mif ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_23i1                            ; Untyped                     ;
++------------------------------------+--------------------------------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0 ;
++------------------------------------+--------------------------------------------+----------------------------+
+; Parameter Name                     ; Value                                      ; Type                       ;
++------------------------------------+--------------------------------------------+----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped                    ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE             ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped                    ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped                    ;
+; WIDTH_A                            ; 8                                          ; Untyped                    ;
+; WIDTHAD_A                          ; 10                                         ; Untyped                    ;
+; NUMWORDS_A                         ; 1024                                       ; Untyped                    ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped                    ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                    ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped                    ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; WIDTH_B                            ; 8                                          ; Untyped                    ;
+; WIDTHAD_B                          ; 10                                         ; Untyped                    ;
+; NUMWORDS_B                         ; 1024                                       ; Untyped                    ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                    ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                    ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                    ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                    ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped                    ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped                    ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped                    ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped                    ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped                    ;
+; BYTE_SIZE                          ; 8                                          ; Untyped                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped                    ;
+; INIT_FILE                          ; db/lab2.ram2_async_memory_4acb313e.hdl.mif ; Untyped                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped                    ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped                    ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                    ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                    ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped                    ;
+; CBXI_PARAMETER                     ; altsyncram_qvh1                            ; Untyped                    ;
++------------------------------------+--------------------------------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0 ;
++------------------------------------+--------------------------------------------+-----------------------------+
+; Parameter Name                     ; Value                                      ; Type                        ;
++------------------------------------+--------------------------------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped                     ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped                     ;
+; WIDTH_A                            ; 8                                          ; Untyped                     ;
+; WIDTHAD_A                          ; 10                                         ; Untyped                     ;
+; NUMWORDS_A                         ; 1024                                       ; Untyped                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; WIDTH_B                            ; 8                                          ; Untyped                     ;
+; WIDTHAD_B                          ; 10                                         ; Untyped                     ;
+; NUMWORDS_B                         ; 1024                                       ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped                     ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped                     ;
+; BYTE_SIZE                          ; 8                                          ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped                     ;
+; INIT_FILE                          ; db/lab2.ram3_async_memory_ea4acf6d.hdl.mif ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_33i1                            ; Untyped                     ;
++------------------------------------+--------------------------------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0 ;
++------------------------------------+--------------------------------------------+----------------------------+
+; Parameter Name                     ; Value                                      ; Type                       ;
++------------------------------------+--------------------------------------------+----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped                    ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE             ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped                    ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped                    ;
+; WIDTH_A                            ; 8                                          ; Untyped                    ;
+; WIDTHAD_A                          ; 10                                         ; Untyped                    ;
+; NUMWORDS_A                         ; 1024                                       ; Untyped                    ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped                    ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                    ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped                    ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; WIDTH_B                            ; 8                                          ; Untyped                    ;
+; WIDTHAD_B                          ; 10                                         ; Untyped                    ;
+; NUMWORDS_B                         ; 1024                                       ; Untyped                    ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                    ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                    ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                    ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                    ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped                    ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped                    ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped                    ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped                    ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped                    ;
+; BYTE_SIZE                          ; 8                                          ; Untyped                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped                    ;
+; INIT_FILE                          ; db/lab2.ram3_async_memory_4acb313e.hdl.mif ; Untyped                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped                    ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped                    ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                    ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                    ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped                    ;
+; CBXI_PARAMETER                     ; altsyncram_rvh1                            ; Untyped                    ;
++------------------------------------+--------------------------------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0 ;
++------------------------------------+--------------------------------------------+-----------------------------+
+; Parameter Name                     ; Value                                      ; Type                        ;
++------------------------------------+--------------------------------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped                     ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped                     ;
+; WIDTH_A                            ; 8                                          ; Untyped                     ;
+; WIDTHAD_A                          ; 10                                         ; Untyped                     ;
+; NUMWORDS_A                         ; 1024                                       ; Untyped                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                     ;
+; WIDTH_B                            ; 8                                          ; Untyped                     ;
+; WIDTHAD_B                          ; 10                                         ; Untyped                     ;
+; NUMWORDS_B                         ; 1024                                       ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped                     ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped                     ;
+; BYTE_SIZE                          ; 8                                          ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped                     ;
+; INIT_FILE                          ; db/lab2.ram1_async_memory_ea4acf6d.hdl.mif ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_13i1                            ; Untyped                     ;
++------------------------------------+--------------------------------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0 ;
++------------------------------------+--------------------------------------------+----------------------------+
+; Parameter Name                     ; Value                                      ; Type                       ;
++------------------------------------+--------------------------------------------+----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped                    ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE             ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped                    ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped                    ;
+; WIDTH_A                            ; 8                                          ; Untyped                    ;
+; WIDTHAD_A                          ; 10                                         ; Untyped                    ;
+; NUMWORDS_A                         ; 1024                                       ; Untyped                    ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped                    ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                    ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped                    ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                    ;
+; WIDTH_B                            ; 8                                          ; Untyped                    ;
+; WIDTHAD_B                          ; 10                                         ; Untyped                    ;
+; NUMWORDS_B                         ; 1024                                       ; Untyped                    ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                    ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                    ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                    ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                    ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped                    ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped                    ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped                    ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped                    ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped                    ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped                    ;
+; BYTE_SIZE                          ; 8                                          ; Untyped                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped                    ;
+; INIT_FILE                          ; db/lab2.ram1_async_memory_4acb313e.hdl.mif ; Untyped                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped                    ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped                    ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                    ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                    ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped                    ;
+; CBXI_PARAMETER                     ; altsyncram_pvh1                            ; Untyped                    ;
++------------------------------------+--------------------------------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                         ;
++-------------------------------------------+--------------------------------------------------------------+
+; Name                                      ; Value                                                        ;
++-------------------------------------------+--------------------------------------------------------------+
+; Number of entity instances                ; 8                                                            ;
+; Entity Instance                           ; data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0  ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 1024                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 8                                                            ;
+;     -- NUMWORDS_B                         ; 1024                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
+; Entity Instance                           ; data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 1024                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 8                                                            ;
+;     -- NUMWORDS_B                         ; 1024                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
+; Entity Instance                           ; data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 1024                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 8                                                            ;
+;     -- NUMWORDS_B                         ; 1024                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
+; Entity Instance                           ; data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0  ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 1024                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 8                                                            ;
+;     -- NUMWORDS_B                         ; 1024                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
+; Entity Instance                           ; data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 1024                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 8                                                            ;
+;     -- NUMWORDS_B                         ; 1024                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
+; Entity Instance                           ; data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0  ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 1024                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 8                                                            ;
+;     -- NUMWORDS_B                         ; 1024                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
+; Entity Instance                           ; data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 1024                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 8                                                            ;
+;     -- NUMWORDS_B                         ; 1024                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
+; Entity Instance                           ; data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0  ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 1024                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 8                                                            ;
+;     -- NUMWORDS_B                         ; 1024                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
++-------------------------------------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "loader:loader|mux_four_n:loader_mux" ;
++-------------+-------+----------+--------------------------------+
+; Port        ; Type  ; Severity ; Details                        ;
++-------------+-------+----------+--------------------------------+
+; inC[31..8]  ; Input ; Info     ; Stuck at GND                   ;
+; inD[31..16] ; Input ; Info     ; Stuck at GND                   ;
++-------------+-------+----------+--------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "mux_four_n:write_data_mux" ;
++------------+-------+----------+-----------------------+
+; Port       ; Type  ; Severity ; Details               ;
++------------+-------+----------+-----------------------+
+; inC[15..0] ; Input ; Info     ; Stuck at GND          ;
++------------+-------+----------+-----------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "mux_four_n:write_mux" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; inC  ; Input ; Info     ; Stuck at VCC           ;
++------+-------+----------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ctr_unit:ctr"                                                                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Branch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 22                          ;
+; cycloneiii_ff         ; 1062                        ;
+;     ENA               ; 1002                        ;
+;     SCLR              ; 38                          ;
+;     plain             ; 22                          ;
+; cycloneiii_lcell_comb ; 3037                        ;
+;     arith             ; 152                         ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 122                         ;
+;     normal            ; 2885                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 70                          ;
+;         3 data inputs ; 324                         ;
+;         4 data inputs ; 2489                        ;
+; cycloneiii_ram_block  ; 64                          ;
+;                       ;                             ;
+; Max LUT depth         ; 23.10                       ;
+; Average LUT depth     ; 18.38                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:17     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+    Info: Processing started: Mon Jul 22 17:37:23 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file pc_jumper.v
+    Info (12023): Found entity 1: pc_jumper
+Info (12021): Found 1 design units, including 1 entities, in source file register.v
+    Info (12023): Found entity 1: register
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: pc
+Info (12021): Found 1 design units, including 1 entities, in source file mux.v
+    Info (12023): Found entity 1: n_mux
+Info (12021): Found 1 design units, including 1 entities, in source file processor.v
+    Info (12023): Found entity 1: processor
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.v
+    Info (12023): Found entity 1: testbench
+Info (12021): Found 1 design units, including 1 entities, in source file serial_buf.v
+    Info (12023): Found entity 1: serial_buffer
+Info (12021): Found 1 design units, including 1 entities, in source file inst_rom.v
+    Info (12023): Found entity 1: inst_rom
+Info (12021): Found 1 design units, including 1 entities, in source file data_memory.v
+    Info (12023): Found entity 1: data_memory
+Info (12021): Found 1 design units, including 1 entities, in source file async_memory.v
+    Info (12023): Found entity 1: async_memory
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu
+Info (12021): Found 1 design units, including 1 entities, in source file sign_extender.v
+    Info (12023): Found entity 1: sign_extender
+Info (12021): Found 1 design units, including 1 entities, in source file test_register.v
+    Info (12023): Found entity 1: test_register
+Info (12021): Found 1 design units, including 1 entities, in source file ctr_unit.v
+    Info (12023): Found entity 1: ctr_unit
+Info (12021): Found 1 design units, including 1 entities, in source file test_ctr.v
+    Info (12023): Found entity 1: test_ctr
+Info (12021): Found 1 design units, including 1 entities, in source file mux_four_n.v
+    Info (12023): Found entity 1: mux_four_n
+Info (12021): Found 1 design units, including 1 entities, in source file extend_zero.v
+    Info (12023): Found entity 1: extend_zero
+Info (12021): Found 1 design units, including 1 entities, in source file loader.v
+    Info (12023): Found entity 1: loader
+Info (12127): Elaborating entity "processor" for the top level hierarchy
+Info (12128): Elaborating entity "ctr_unit" for hierarchy "ctr_unit:ctr"
+Warning (10270): Verilog HDL Case Statement warning at ctr_unit.v(86): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at ctr_unit.v(176): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at ctr_unit.v(189): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "load_sel_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "mem_sel_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "func_in_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "RegDst_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "ALUSrc_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "RegWrite_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "re_in_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "Branch_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "size_in_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "jump_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "we_in_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ctr_unit.v(76): inferring latch(es) for variable "MemToReg_reg", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "MemToReg_reg[0]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "MemToReg_reg[1]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "we_in_reg" at ctr_unit.v(76)
+Info (10041): Inferred latch for "jump_reg[0]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "jump_reg[1]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "size_in_reg[0]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "size_in_reg[1]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "Branch_reg" at ctr_unit.v(76)
+Info (10041): Inferred latch for "re_in_reg" at ctr_unit.v(76)
+Info (10041): Inferred latch for "RegWrite_reg" at ctr_unit.v(76)
+Info (10041): Inferred latch for "ALUSrc_reg" at ctr_unit.v(76)
+Info (10041): Inferred latch for "RegDst_reg[0]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "RegDst_reg[1]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "mem_sel_reg" at ctr_unit.v(76)
+Info (10041): Inferred latch for "load_sel_reg[0]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "load_sel_reg[1]" at ctr_unit.v(76)
+Info (10041): Inferred latch for "func_in_reg[0]" at ctr_unit.v(165)
+Info (10041): Inferred latch for "func_in_reg[1]" at ctr_unit.v(165)
+Info (10041): Inferred latch for "func_in_reg[2]" at ctr_unit.v(165)
+Info (10041): Inferred latch for "func_in_reg[3]" at ctr_unit.v(165)
+Info (10041): Inferred latch for "func_in_reg[4]" at ctr_unit.v(165)
+Info (10041): Inferred latch for "func_in_reg[5]" at ctr_unit.v(165)
+Info (12128): Elaborating entity "mux_four_n" for hierarchy "mux_four_n:write_mux"
+Info (12128): Elaborating entity "mux_four_n" for hierarchy "mux_four_n:write_data_mux"
+Info (12128): Elaborating entity "n_mux" for hierarchy "n_mux:alu_mux"
+Info (12128): Elaborating entity "sign_extender" for hierarchy "sign_extender:se"
+Info (12128): Elaborating entity "pc_jumper" for hierarchy "pc_jumper:pc_jumper"
+Info (12128): Elaborating entity "pc" for hierarchy "pc:program_counter"
+Info (12128): Elaborating entity "loader" for hierarchy "loader:loader"
+Info (12128): Elaborating entity "register" for hierarchy "register:registers"
+Info (12128): Elaborating entity "inst_rom" for hierarchy "inst_rom:inst_rom"
+Warning (10850): Verilog HDL warning at inst_rom.v(31): number of words (396) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10030): Net "rom.data_a" at inst_rom.v(24) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom.waddr_a" at inst_rom.v(24) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom.we_a" at inst_rom.v(24) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu"
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:rom"
+Info (12128): Elaborating entity "async_memory" for hierarchy "data_memory:rom|async_memory:data_seg"
+Warning (10850): Verilog HDL warning at async_memory.v(64): number of words (4) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10850): Verilog HDL warning at async_memory.v(65): number of words (4) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10850): Verilog HDL warning at async_memory.v(66): number of words (4) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10850): Verilog HDL warning at async_memory.v(67): number of words (4) in memory file does not match the number of elements in the address range [0:1023]
+Info (12128): Elaborating entity "async_memory" for hierarchy "data_memory:rom|async_memory:stack_seg"
+Info (12128): Elaborating entity "serial_buffer" for hierarchy "data_memory:rom|serial_buffer:ser"
+Warning (276027): Inferred dual-clock RAM node "data_memory:rom|async_memory:data_seg|mem0_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "data_memory:rom|async_memory:stack_seg|mem0_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "data_memory:rom|async_memory:stack_seg|mem2_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "data_memory:rom|async_memory:data_seg|mem2_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "data_memory:rom|async_memory:stack_seg|mem3_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "data_memory:rom|async_memory:data_seg|mem3_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "data_memory:rom|async_memory:stack_seg|mem1_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "data_memory:rom|async_memory:data_seg|mem1_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "inst_rom:inst_rom|rom" is uninferred due to asynchronous read logic
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/yuz057/Desktop/MIPS_cpu/lab2/db/lab2.ram0_inst_rom_f955bb2a.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (19000): Inferred 8 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:rom|async_memory:data_seg|mem0_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab2.ram0_async_memory_4acb313e.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:rom|async_memory:stack_seg|mem0_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab2.ram0_async_memory_ea4acf6d.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:rom|async_memory:stack_seg|mem2_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab2.ram2_async_memory_ea4acf6d.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:rom|async_memory:data_seg|mem2_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab2.ram2_async_memory_4acb313e.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:rom|async_memory:stack_seg|mem3_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab2.ram3_async_memory_ea4acf6d.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:rom|async_memory:data_seg|mem3_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab2.ram3_async_memory_4acb313e.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:rom|async_memory:stack_seg|mem1_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab2.ram1_async_memory_ea4acf6d.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:rom|async_memory:data_seg|mem1_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab2.ram1_async_memory_4acb313e.hdl.mif
+Info (12130): Elaborated megafunction instantiation "data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:rom|async_memory:data_seg|altsyncram:mem0_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab2.ram0_async_memory_4acb313e.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ovh1.tdf
+    Info (12023): Found entity 1: altsyncram_ovh1
+Info (12130): Elaborated megafunction instantiation "data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:rom|async_memory:stack_seg|altsyncram:mem0_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab2.ram0_async_memory_ea4acf6d.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_03i1.tdf
+    Info (12023): Found entity 1: altsyncram_03i1
+Info (12130): Elaborated megafunction instantiation "data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:rom|async_memory:stack_seg|altsyncram:mem2_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab2.ram2_async_memory_ea4acf6d.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_23i1.tdf
+    Info (12023): Found entity 1: altsyncram_23i1
+Info (12130): Elaborated megafunction instantiation "data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:rom|async_memory:data_seg|altsyncram:mem2_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab2.ram2_async_memory_4acb313e.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qvh1.tdf
+    Info (12023): Found entity 1: altsyncram_qvh1
+Info (12130): Elaborated megafunction instantiation "data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:rom|async_memory:stack_seg|altsyncram:mem3_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab2.ram3_async_memory_ea4acf6d.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_33i1.tdf
+    Info (12023): Found entity 1: altsyncram_33i1
+Info (12130): Elaborated megafunction instantiation "data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:rom|async_memory:data_seg|altsyncram:mem3_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab2.ram3_async_memory_4acb313e.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_rvh1.tdf
+    Info (12023): Found entity 1: altsyncram_rvh1
+Info (12130): Elaborated megafunction instantiation "data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:rom|async_memory:stack_seg|altsyncram:mem1_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab2.ram1_async_memory_ea4acf6d.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_13i1.tdf
+    Info (12023): Found entity 1: altsyncram_13i1
+Info (12130): Elaborated megafunction instantiation "data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:rom|async_memory:data_seg|altsyncram:mem1_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab2.ram1_async_memory_4acb313e.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pvh1.tdf
+    Info (12023): Found entity 1: altsyncram_pvh1
+Warning (13012): Latch ctr_unit:ctr|we_in_reg has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[29]
+Warning (13012): Latch ctr_unit:ctr|func_in_reg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[25]
+Warning (13012): Latch ctr_unit:ctr|ALUSrc_reg has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[4]
+Warning (13012): Latch ctr_unit:ctr|func_in_reg[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[27]
+Warning (13012): Latch ctr_unit:ctr|func_in_reg[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[28]
+Warning (13012): Latch ctr_unit:ctr|func_in_reg[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[29]
+Warning (13012): Latch ctr_unit:ctr|func_in_reg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[2]
+Warning (13012): Latch ctr_unit:ctr|func_in_reg[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[26]
+Warning (13012): Latch ctr_unit:ctr|MemToReg_reg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[4]
+Warning (13012): Latch ctr_unit:ctr|MemToReg_reg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[2]
+Warning (13012): Latch ctr_unit:ctr|load_sel_reg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[2]
+Warning (13012): Latch ctr_unit:ctr|mem_sel_reg has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[3]
+    Warning (13013): Ports ENA and PRE on the latch are fed by the same signal inst_rom:inst_rom|out[3]
+Warning (13012): Latch ctr_unit:ctr|RegWrite_reg has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[2]
+Warning (13012): Latch ctr_unit:ctr|RegDst_reg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[2]
+Warning (13012): Latch ctr_unit:ctr|RegDst_reg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[2]
+Warning (13012): Latch ctr_unit:ctr|jump_reg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[2]
+Warning (13012): Latch ctr_unit:ctr|jump_reg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[29]
+    Warning (13013): Ports ENA and PRE on the latch are fed by the same signal inst_rom:inst_rom|out[28]
+Warning (13012): Latch ctr_unit:ctr|load_sel_reg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[3]
+Warning (13012): Latch ctr_unit:ctr|size_in_reg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[3]
+Warning (13012): Latch ctr_unit:ctr|size_in_reg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_rom:inst_rom|out[28]
+Warning (14026): LATCH primitive "ctr_unit:ctr|jump_reg[1]" is permanently enabled
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "serial_rden_out" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file F:/CSE141L/MIPS_cpu/lab2/output_files/lab2.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 4116 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 4030 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 77 warnings
+    Info: Peak virtual memory: 4897 megabytes
+    Info: Processing ended: Mon Jul 22 17:37:54 2019
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:39
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/CSE141L/MIPS_cpu/lab2/output_files/lab2.map.smsg.
+
+

@@ -1,0 +1,161 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -15.776
+TNS   : -16087.522
+
+Type  : Slow 1200mV 85C Model Setup 'inst_rom:inst_rom|out[2]'
+Slack : -5.935
+TNS   : -72.676
+
+Type  : Slow 1200mV 85C Model Setup 'inst_rom:inst_rom|out[24]'
+Slack : -5.025
+TNS   : -48.979
+
+Type  : Slow 1200mV 85C Model Hold 'inst_rom:inst_rom|out[24]'
+Slack : -3.017
+TNS   : -7.313
+
+Type  : Slow 1200mV 85C Model Hold 'inst_rom:inst_rom|out[2]'
+Slack : -2.535
+TNS   : -7.045
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.952
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'inst_rom:inst_rom|out[24]'
+Slack : -2.594
+TNS   : -2.594
+
+Type  : Slow 1200mV 85C Model Recovery 'inst_rom:inst_rom|out[2]'
+Slack : -0.541
+TNS   : -0.541
+
+Type  : Slow 1200mV 85C Model Removal 'inst_rom:inst_rom|out[24]'
+Slack : -1.057
+TNS   : -1.057
+
+Type  : Slow 1200mV 85C Model Removal 'inst_rom:inst_rom|out[2]'
+Slack : -0.541
+TNS   : -0.541
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -1134.568
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst_rom:inst_rom|out[2]'
+Slack : -0.311
+TNS   : -6.649
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst_rom:inst_rom|out[24]'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -14.081
+TNS   : -14333.735
+
+Type  : Slow 1200mV 0C Model Setup 'inst_rom:inst_rom|out[2]'
+Slack : -5.351
+TNS   : -66.216
+
+Type  : Slow 1200mV 0C Model Setup 'inst_rom:inst_rom|out[24]'
+Slack : -4.504
+TNS   : -43.996
+
+Type  : Slow 1200mV 0C Model Hold 'inst_rom:inst_rom|out[24]'
+Slack : -2.658
+TNS   : -6.244
+
+Type  : Slow 1200mV 0C Model Hold 'inst_rom:inst_rom|out[2]'
+Slack : -2.193
+TNS   : -5.689
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.899
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'inst_rom:inst_rom|out[24]'
+Slack : -2.214
+TNS   : -2.214
+
+Type  : Slow 1200mV 0C Model Recovery 'inst_rom:inst_rom|out[2]'
+Slack : -0.568
+TNS   : -0.568
+
+Type  : Slow 1200mV 0C Model Removal 'inst_rom:inst_rom|out[24]'
+Slack : -0.979
+TNS   : -0.979
+
+Type  : Slow 1200mV 0C Model Removal 'inst_rom:inst_rom|out[2]'
+Slack : -0.438
+TNS   : -0.438
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -1134.568
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst_rom:inst_rom|out[2]'
+Slack : -0.169
+TNS   : -2.810
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst_rom:inst_rom|out[24]'
+Slack : 0.436
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -8.927
+TNS   : -9032.089
+
+Type  : Fast 1200mV 0C Model Setup 'inst_rom:inst_rom|out[2]'
+Slack : -3.415
+TNS   : -39.929
+
+Type  : Fast 1200mV 0C Model Setup 'inst_rom:inst_rom|out[24]'
+Slack : -2.842
+TNS   : -27.574
+
+Type  : Fast 1200mV 0C Model Hold 'inst_rom:inst_rom|out[24]'
+Slack : -1.836
+TNS   : -4.787
+
+Type  : Fast 1200mV 0C Model Hold 'inst_rom:inst_rom|out[2]'
+Slack : -1.633
+TNS   : -5.569
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.515
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'inst_rom:inst_rom|out[24]'
+Slack : -1.158
+TNS   : -1.158
+
+Type  : Fast 1200mV 0C Model Recovery 'inst_rom:inst_rom|out[2]'
+Slack : 0.034
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'inst_rom:inst_rom|out[24]'
+Slack : -0.584
+TNS   : -0.584
+
+Type  : Fast 1200mV 0C Model Removal 'inst_rom:inst_rom|out[2]'
+Slack : -0.302
+TNS   : -0.302
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -1180.782
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst_rom:inst_rom|out[2]'
+Slack : -0.089
+TNS   : -1.206
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst_rom:inst_rom|out[24]'
+Slack : 0.305
+TNS   : 0.000
+
+------------------------------------------------------------
